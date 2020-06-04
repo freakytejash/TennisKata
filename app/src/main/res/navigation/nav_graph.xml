@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/screen1">
+
+    <fragment
+        android:id="@+id/screen1"
+        android:name="com.example.tenniskata.ui.main.Screen1"
+        android:label="StartFragment"
+        tools:layout="@layout/screen4_fragment" >
+        <action
+            android:id="@+id/action_screen1_to_screen2"
+            app:destination="@id/screen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/screen2"
+        android:name="com.example.tenniskata.ui.main.Screen2"
+        android:label="Screen2" >
+        <action
+            android:id="@+id/action_screen2_to_screen3"
+            app:destination="@id/screen3" />
+    </fragment>
+    <fragment
+        android:id="@+id/screen3"
+        android:name="com.example.tenniskata.ui.main.Screen3"
+        android:label="Screen3" >
+        <action
+            android:id="@+id/action_screen3_to_screen4"
+            app:destination="@id/screen4" />
+        <argument
+            android:name="player1"
+            app:argType="string"
+            android:defaultValue="Player1" />
+        <argument
+            android:name="player2"
+            app:argType="string"
+            android:defaultValue="Player2" />
+    </fragment>
+    <fragment
+        android:id="@+id/screen4"
+        android:name="com.example.tenniskata.ui.main.Screen4"
+        android:label="Screen4" >
+        <action
+            android:id="@+id/action_screen4_to_screen1"
+            app:destination="@id/screen1" />
+        <argument
+            android:name="score1"
+            app:argType="string"
+            android:defaultValue="Winner" />
+        <argument
+            android:name="score2"
+            app:argType="string"
+            android:defaultValue="Winner" />
+        <argument
+            android:name="player1"
+            app:argType="string"
+            android:defaultValue="Player1" />
+        <argument
+            android:name="player2"
+            app:argType="string"
+            android:defaultValue="Player2" />
+    </fragment>
+</navigation>
